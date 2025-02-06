@@ -15,7 +15,6 @@ def check_password(password):
     result.append(calculate_password_score(password))
     # index 1 is true/false from file checker
     result.append(check_word_in_file(file_name, password))
-    # return 
     return result
 
 eel.start('index.html')  # Start
