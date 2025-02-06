@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PSM</title>
+        
+        <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
+        <script type="text/javascript" src="/eel.js"></script>
+    </head>
+    
+    <body>
+        Password Strength Meter
+        <input id="password-input" type="password" placeholder="Password"></input>
+        <script type="text/javascript">
+            const onSubmit = async (event) => {
+                const [score, isCompromised] = await eel.check_password(event.target.value)();
+                console.log("score", score)
+                console.log("Compromised", isCompromised)
+            }
+
+            const input = document.getElementById("password-input"); 
+            input.addEventListener("change", onSubmit)
+        </script>
+    </body>
+</html>
