@@ -1,0 +1,23 @@
+body {
+    background-color: #52536e;
+    align-items: center;
+}
+
+#password-check {
+    background-color: rgb(201, 216, 229);
+    gap: 20px;
+    padding: 20px;
+    border-radius: 2px;
+}
+
+.text-input {
+
+    & label {
+        font-size: xx-large;
+    }
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}

@@ -2,23 +2,42 @@
 <html>
     <head>
         <title>PSM</title>
-        
-        <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
+        <link rel="stylesheet" href="css/styles.css">
         <script type="text/javascript" src="/eel.js"></script>
     </head>
     
-    <body>
-        Password Strength Meter
-        <input id="password-input" type="password" placeholder="Password"></input>
-        <script type="text/javascript">
-            const onSubmit = async (event) => {
-                const [score, isCompromised] = await eel.check_password(event.target.value)();
-                console.log("score", score)
-                console.log("Compromised", isCompromised)
-            }
-
-            const input = document.getElementById("password-input"); 
-            input.addEventListener("change", onSubmit)
-        </script>
+    <body class="flex-column">
+        <h1>
+            Password Strength Meter
+        </h1>
+        <h2>Powered by G12™ and DeepSeek</h2>
+        <form id="password-check" class="flex-column">
+            <div class="text-input flex-column">
+                <label for="username">Username</label>
+                <input id="username" name="username" placeholder="Username">
+            </div>
+            <div class="text-input flex-column">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Password">
+            </div>
+            <div>
+                <input id="show-strength-bar" name="strength-bar" type="checkbox">
+                <label for="show-strength-bar">Show strength bar</label>
+            </div>
+            <div>
+                <input id="show-requirements" name="requirements" type="checkbox">
+                <label for="show-requirements">Show Password requirements</label>
+            </div>
+            <div>
+                <input id="show-ai-answer" name="ai-answer" type="checkbox">
+                <label for="show-ai-answer">Show AI analysis</label>
+            </div>
+            <button>Check</button> 
+        </form>
+        <div id="strength-bar">bar</div>
+        <div id="requirements">req</div>
+        <div id="ai-analysis">ai</div>
+        <div id="loader">loader</div>
+        <script type="text/javascript" src="scripts/checkPassword.js"></script>
     </body>
 </html>
