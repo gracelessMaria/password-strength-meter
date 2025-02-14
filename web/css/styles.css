@@ -1,23 +1,55 @@
 body {
-    background-color: #52536e;
+    background-color: black;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-#password-check {
-    background-color: rgb(201, 216, 229);
+h1 {
+    margin: 0;
+}
+
+h2 {
+    font-size: x-large;
+    font-weight: normal;
+}
+
+#form-container {
+    width: 75%;
+    height: 75%;
+    justify-content: center;
+    background-color: #1a191a;
+    color:aliceblue;
+    border-radius: 15px;
+}
+
+#password-form {
     gap: 20px;
     padding: 20px;
-    border-radius: 2px;
 }
 
-.text-input {
+#password-group {
+    position: relative;
+}
 
-    & label {
-        font-size: xx-large;
-    }
+#togglePassword {
+    position: absolute;
+    top: 7px;
+    right: 9px;
+}
+
+.input-style {
+    padding-right: 30px;
+}
+
+.flex-row{
+    display: flex;
+    gap: 20px;
 }
 
 .flex-column {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }

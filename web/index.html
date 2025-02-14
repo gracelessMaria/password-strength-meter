@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>PSM</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" >
         <link rel="stylesheet" href="css/styles.css">
         <script type="text/javascript" src="/eel.js"></script>
     </head>
     
-    <body class="flex-column">
-        <h1>
-            Password Strength Meter
-        </h1>
-        <h2>Powered by G12™ and DeepSeek</h2>
-        <form id="password-check" class="flex-column">
-            <div class="text-input flex-column">
-                <label for="username">Username</label>
-                <input id="username" name="username" placeholder="Username">
-            </div>
-            <div class="text-input flex-column">
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password" placeholder="Password">
-            </div>
-            <div>
-                <input id="show-strength-bar" name="strength-bar" type="checkbox">
-                <label for="show-strength-bar">Show strength bar</label>
-            </div>
-            <div>
-                <input id="show-requirements" name="requirements" type="checkbox">
-                <label for="show-requirements">Show Password requirements</label>
-            </div>
-            <div>
-                <input id="show-ai-answer" name="ai-answer" type="checkbox">
-                <label for="show-ai-answer">Show AI analysis</label>
-            </div>
-            <button>Check</button> 
-        </form>
-        <div id="strength-bar">bar</div>
-        <div id="requirements">req</div>
-        <div id="ai-analysis">ai</div>
-        <div id="loader">loader</div>
+    <body>
+        <div id="form-container" class="flex-column">
+            <h1>
+                Password Strength Meter
+            </h1>
+            <h2>Powered by G12™ and DeepSeek</h2>
+            <form id="password-form" class="flex-column">
+                <div class="form-group">
+                    <input id="username" class="form-control input-style" name="username" placeholder="Username" data-bs-theme="dark">
+                </div>
+                <div id="password-group" class="form-group">
+                    <input id="password" class="form-control input-style" name="password" type="password" placeholder="Password" data-bs-theme="dark">
+                    <i class="bi bi-eye-slash" id="togglePassword"></i>
+                </div>
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="show-strength-bar" name="strength-bar" type="checkbox" data-bs-theme="dark">
+                        <label class="form-check-label" for="show-strength-bar">Show strength bar</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="show-requirements" name="requirements" type="checkbox" data-bs-theme="dark">
+                        <label class="form-check-label" for="show-requirements">Show password requirements</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="show-ai-answer" name="ai-answer" type="checkbox" data-bs-theme="dark">
+                        <label class="form-check-label" for="show-ai-answer">Show AI analysis</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary align-items-center">Check</button> 
+            </form>
+            <!-- <div id="strength-bar">bar</div>
+            <div id="requirements">req</div>
+            <div id="ai-analysis">ai</div>
+            <div id="loader">loader</div> -->
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="scripts/passwordToggle.js"></script>
         <script type="text/javascript" src="scripts/checkPassword.js"></script>
     </body>
 </html>

@@ -29,7 +29,5 @@ def password_tests_check(password):
             break
     if has_special:
         score[4] = True
-    
-    
                                                                         
     return score                                                        # outputs a python list of True and False 

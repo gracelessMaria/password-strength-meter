@@ -4,10 +4,12 @@ const onSubmit = async (event) => {
     const formProps = Object.fromEntries(formData);
     const [score, isCompromised, aiAnswer] = await eel.check_password(formProps.password)();
     console.log('score', score)
+    console.log(formProps)
 }
 
-const form = document.getElementById("password-check"); 
+const form = document.getElementById("password-form"); 
 form.addEventListener("submit", onSubmit)
+
 
 /**
  * TODO
