@@ -17,37 +17,54 @@
                 Password Strength Meter
             </h1>
             <h2>Powered by G12™ and DeepSeek</h2>
-            <form id="password-form" class="flex-column">
-                <div class="form-group">
-                    <input id="username" class="form-control input-style" name="username" placeholder="Username" data-bs-theme="dark">
+            <div class="form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="show-strength-bar" name="strength-bar" type="checkbox" data-bs-theme="dark">
+                    <label class="form-check-label" for="show-strength-bar">Show strength bar</label>
                 </div>
-                <div id="password-group" class="form-group">
-                    <input id="password" class="form-control input-style" name="password" type="password" placeholder="Password" data-bs-theme="dark">
-                    <i class="bi bi-eye-slash" id="togglePassword"></i>
+                <!-- <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="show-requirements" name="requirements" type="checkbox" data-bs-theme="dark">
+                    <label class="form-check-label" for="show-requirements">Show password requirements</label>
+                </div> -->
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="show-ai-answer" name="ai-answer" type="checkbox" data-bs-theme="dark">
+                    <label class="form-check-label" for="show-ai-answer">Show AI analysis</label>
                 </div>
-                <div class="form-group">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" id="show-strength-bar" name="strength-bar" type="checkbox" data-bs-theme="dark">
-                        <label class="form-check-label" for="show-strength-bar">Show strength bar</label>
+            </div>
+                <form id="password-form" class="flex-column">
+                    <div class="form-group">
+                        <input id="username" class="form-control input-style" name="username" placeholder="Username" data-bs-theme="dark">
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" id="show-requirements" name="requirements" type="checkbox" data-bs-theme="dark">
-                        <label class="form-check-label" for="show-requirements">Show password requirements</label>
+                    <div id="password-group" class="form-group">
+                        <input id="password" class="form-control input-style" name="password" type="password" placeholder="Password" data-bs-theme="dark">
+                        <i class="bi bi-eye-slash" id="togglePassword"></i>
+                        <button id="toggle-requirements" popovertarget="requirement-popover" type="button" title="Show password requirements">
+                            <i class="bi bi-info-circle"></i>
+                        </button>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" id="show-ai-answer" name="ai-answer" type="checkbox" data-bs-theme="dark">
-                        <label class="form-check-label" for="show-ai-answer">Show AI analysis</label>
+                    <div id="password-bar">
+                        <span id="password-strength"></span>
                     </div>
-                </div>
-                <button class="btn btn-primary align-items-center">Check</button> 
-            </form>
+                    <button class="btn btn-primary align-items-center">Check</button> 
+                </form>
+                <p id="compromised-info">This password is compromised!</p>
+            <div popover="manual" id="requirement-popover" >
+                Password must contain the following:
+                <ul id="requirement-list">
+                    <li class="requirement">At least 8 characters</li>
+                    <li class="requirement">1 uppercase letter</li>
+                    <li class="requirement">1 lowercase letter</li>
+                    <li class="requirement">1 digit</li>
+                    <li class="requirement">1 special character</li>
+                </ul>
+            </div>
             <!-- <div id="strength-bar">bar</div>
-            <div id="requirements">req</div>
             <div id="ai-analysis">ai</div>
             <div id="loader">loader</div> -->
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="scripts/passwordToggle.js"></script>
+        <script type="text/javascript" src="scripts/toggleShowPassword.js"></script>
         <script type="text/javascript" src="scripts/checkPassword.js"></script>
+        <script type="text/javascript" src="scripts/pythonIntegration.js"></script>
     </body>
 </html>
