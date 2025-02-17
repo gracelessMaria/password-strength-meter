@@ -17,20 +17,20 @@
                 Password Strength Meter
             </h1>
             <h2>Powered by G12™ and DeepSeek</h2>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" id="show-strength-bar" name="strength-bar" type="checkbox" data-bs-theme="dark">
                     <label class="form-check-label" for="show-strength-bar">Show strength bar</label>
                 </div>
-                <!-- <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline">
                     <input class="form-check-input" id="show-requirements" name="requirements" type="checkbox" data-bs-theme="dark">
                     <label class="form-check-label" for="show-requirements">Show password requirements</label>
-                </div> -->
+                </div> 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" id="show-ai-answer" name="ai-answer" type="checkbox" data-bs-theme="dark">
                     <label class="form-check-label" for="show-ai-answer">Show AI analysis</label>
                 </div>
-            </div>
+            </div>-->
                 <form id="password-form" class="flex-column">
                     <div class="form-group">
                         <input id="username" class="form-control input-style" name="username" placeholder="Username" data-bs-theme="dark">
@@ -58,9 +58,10 @@
                     <li class="requirement">1 special character</li>
                 </ul>
             </div>
-            <!-- <div id="strength-bar">bar</div>
-            <div id="ai-analysis">ai</div>
-            <div id="loader">loader</div> -->
+            <div>
+                <p id="ai-analysis"></p>
+            </div>
+            <!-- <div id="loader">loader</div> -->
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script type="text/javascript" src="scripts/toggleShowPassword.js"></script>
