@@ -3,7 +3,7 @@ const strengthColors = ["#ff0000", "#ff0000", "#ffa700", "#fff400", "#a3ff00", "
 const passwordTestCheck = (password) => {
     const score = [false, false, false, false, false];
     
-    const minLength = password.length >= 8;
+    const minLength = password.length >= 12;
     score[0] = minLength;
 
     const upperCaseRegex = /\p{Lu}/u;

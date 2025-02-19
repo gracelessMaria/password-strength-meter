@@ -12,7 +12,7 @@ def query_ollama(prompt):
     
                                                                                     # Create the payload with model name, prompt, and options
     data = {
-        "model": "deepseek-r1:14b",
+        "model": "deepseek-r1:1.5b",
         "prompt": "please check how strong this password is : " + prompt ,
         "stream": False,                                                            # To prevent streaming responses
         "options": {

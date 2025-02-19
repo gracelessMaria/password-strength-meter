@@ -3,7 +3,7 @@ def password_tests_check(password):
     length = len(password)
     
                                                                         # Test for atleast 8 characters
-    if length >= 8:
+    if length >= 12:
         score[0] = True
     
                                                                         # Test for uppercase
