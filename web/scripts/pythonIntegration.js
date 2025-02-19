@@ -28,6 +28,7 @@ const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const formProps = Object.fromEntries(formData);
+    console.log("thinking...")
     const [isCompromised, isPasswordLikeUsername, aiAnalysis = aiAnalysisPlaceholder] = await eel.check_password(formProps.password, formProps.username)();
     displayCompromise(isCompromised);
     displayAiAnalysis(aiAnalysis);
