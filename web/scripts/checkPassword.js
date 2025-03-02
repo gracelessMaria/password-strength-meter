@@ -25,9 +25,11 @@ const toggleRequirementCheckmarks = (score) => {
     const requirementListElements = Array.from(document.getElementsByClassName("requirement"));
     requirementListElements.forEach((element, index) => {
         if (score[index]) {
-            element.classList.add("requirement-checked");
+            element.classList.add("checked");
+            element.classList.remove("unchecked");
         } else {
-            element.classList.remove("requirement-checked");
+            element.classList.remove("checked");
+            element.classList.add("unchecked");
         }
     });
 };
@@ -47,12 +49,3 @@ const handlePasswordChange = (event) => {
 
 const passwordField = document.getElementById("password");
 passwordField.addEventListener("input", handlePasswordChange);
-
-
-/**
- * TODO
- * This script will handle displaying the loader
- * So we need to getElementById("loader")
- * And before we await eel display the loader
- * And after await hide the loader
- */
