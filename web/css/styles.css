@@ -134,7 +134,6 @@ h2 {
     }
 }
 
-
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -157,6 +156,7 @@ h2 {
 .overflow-scroll {
     max-height: 75%;
     max-width: 75%;
+    overflow-x: hidden;
     overflow-y: scroll;
     transition: opacity 250ms ease-in;
     opacity: 0;
