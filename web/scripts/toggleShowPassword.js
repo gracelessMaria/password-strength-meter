@@ -1,8 +1,9 @@
 const eyecon = document.getElementById('togglePassword');
 const passwordInput = document.getElementById('password');
-
+/**
+ * Toggle the input type attribute between `password` and `text`.
+ */
 const toggleShowPassword = () => {
-    // Toggle the input type attribute using getAttribute() and setAttribute method
     let type;
     if (passwordInput.getAttribute('type') === 'password') {
         type = 'text';
