@@ -19,8 +19,9 @@
             <h2>Powered by G12™ and DeepSeek</h2>
 
             <div class="grid">
-                <div class="grid-column overflow-scroll">
-                    <div id="ai-container">
+                <div id="ai-container" class="grid-column">
+                    <div class="ai-overflow">
+                        <h3>Deepseek says</h3>
                         <p id="ai-analysis"></p>
                     </div>
                 </div>
@@ -48,11 +49,11 @@
                     <p id="similarity-info">The username and password are too similar.</p>
                     <p id="compromised-info">This password is compromised!</p>
                     <div popover="manual" id="requirement-popover" >
-                        Password must contain the following:
+                        Password should contain the following:
                         <ul id="requirement-list">
-                            <li class="requirement unchecked">At least 12 characters</li>
-                            <li class="requirement unchecked">1 uppercase letter</li>
-                            <li class="requirement unchecked">1 lowercase letter</li>
+                            <li class="requirement unchecked">At least 8 characters</li>
+                            <li class="requirement unchecked">Recommended length of at least 15 characters</li>
+                            <li class="requirement unchecked">A mix of uppercase and lowercase letters</li>
                             <li class="requirement unchecked">1 digit</li>
                             <li class="requirement unchecked">1 special character</li>
                         </ul>

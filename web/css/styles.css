@@ -16,6 +16,7 @@ h2 {
     margin-bottom: 50px;
 }
 
+
 #form-container {
     width: 75%;
     height: 75%;
@@ -31,6 +32,15 @@ h2 {
     padding: 15px;
     border: var(--bs-border-width) solid #484c50;
     border-radius: 15px;
+
+    height: 75%;
+    max-width: 75%;
+    transition: opacity 250ms ease-in;
+    opacity: 0;
+
+    &.show {
+        opacity: 1;
+    }
 }
 
 #password-form {
@@ -153,17 +163,10 @@ h2 {
     width: 100%;
 }
 
-.overflow-scroll {
-    max-height: 75%;
-    max-width: 75%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    transition: opacity 250ms ease-in;
-    opacity: 0;
-
-    &.show {
-        opacity: 1;
-    }
+.ai-overflow {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 15px;
 }
 
 #loading-dialog {

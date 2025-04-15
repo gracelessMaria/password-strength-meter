@@ -38,13 +38,12 @@ const displayAiAnalysis = (aiAnalysis) => {
     const aiContainer = document.getElementById("ai-container");
     const analysisContainer = document.getElementById("ai-analysis");
     if (aiAnalysis) {
-        aiContainer.parentElement.classList.add("show")
+        aiContainer.classList.add("show")
         analysisContainer.innerHTML = aiAnalysis;
     } else {
         aiContainer.parentElement.classList.remove("show");
         analysisContainer.innerHTML = "";
     }
-
 };
 
 /**
@@ -67,13 +66,14 @@ const onSubmit = async (event) => {
     // Execute python code and await
     console.log("thinking...")
     const [isCompromised, isPasswordLikeUsername, aiAnalysis] = await eel.check_password(password, username, showAi)();
+
     console.log("done thinking!");
     // Close dialog when python is done
     dialog.close();
     
     // Handle python data
-    displayCompromise(isCompromised);
     displayAiAnalysis(aiAnalysis);
+    displayCompromise(isCompromised);
     displaySimilarity(isPasswordLikeUsername);
 };
 

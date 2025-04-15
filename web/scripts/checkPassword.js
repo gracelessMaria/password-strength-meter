@@ -3,7 +3,7 @@ const strengthColors = ["#ff0000", "#ff0000", "#ffa700", "#fff400", "#a3ff00", "
 
 /**
  * Given a password string calculates a score based on five password criteria: 
- * minimum length of 12, presence of uppercase, lowercase, digit and special character.
+ * minimum length of 8 (recommended 15), presence of uppercase, lowercase, digit and special character.
  * 
  * @param {string} password 
  * @returns Array of five booleans, which represent the individual score points
@@ -11,14 +11,20 @@ const strengthColors = ["#ff0000", "#ff0000", "#ffa700", "#fff400", "#a3ff00", "
 const passwordTestCheck = (password) => {
     const score = [false, false, false, false, false];
     
-    const minLength = password.length >= 12;
+    const minLength = password.length >= 8;
     score[0] = minLength;
 
-    const upperCaseRegex = /\p{Lu}/u;
-    score[1] = !!password.match(upperCaseRegex);
+    const recommendedLength = password.length >= 15;
+    score[1] = recommendedLength;
 
-    const lowerCaseRegex = /\p{Ll}/u;
-    score[2] = !!password.match(lowerCaseRegex);
+    // const upperCaseRegex = /\p{Lu}/u;
+    // score[1] = !!password.match(upperCaseRegex);
+
+    // const lowerCaseRegex = /\p{Ll}/u;
+    // score[2] = !!password.match(lowerCaseRegex);
+
+    const upperAndLowercaseRegex = /\p{Ll}+.*\p{Lu}+|\p{Lu}+.*\p{Ll}+/u;
+    score[2] = !!password.match(upperAndLowercaseRegex);
 
     const digitRegex = /[0-9]/;
     score[3] = !!password.match(digitRegex);
