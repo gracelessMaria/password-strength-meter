@@ -10,19 +10,3 @@ def username_password_likeness(username, password):
         if chunk in username_lower:
             return True
     return False
-
-"""
-
-if username_password_likeness("kafkaesque", "esque"):
-    print("yes")
-else:
-    print("no")
-
-
-if username_password_likeness("kafkaesque", "kurmd"):
-    print("yes")
-else:
-    print("no")
-
-
-"""
