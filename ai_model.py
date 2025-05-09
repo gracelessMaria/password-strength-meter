@@ -13,7 +13,7 @@ def query_ollama(prompt):
                                                                                     # Create the payload with model name, prompt, and options
     data = {
         "model": "deepseek-r1:1.5b",
-        "prompt": "please check how strong this password is : " + prompt ,
+        "prompt": "Is this password strong? If not, how can I make it better?: " + prompt ,
         "stream": False,                                                            # To prevent streaming responses
         "options": {
             "temperature": 0.7,                                                     # Randomness
@@ -45,7 +45,7 @@ def split_string(text):
 
 
 
-#!!!!!!! Use this function to call the model 
+# Call the model 
 def call_ai(password):
     answer = split_string(query_ollama(password))
     return answer
